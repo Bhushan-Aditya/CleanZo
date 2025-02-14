@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+def flutterProjectRoot = rootProject.projectDir.parentFile
+def plugins = new Properties()
+def pluginsFile = new File(flutterProjectRoot, '.flutter-plugins')
+if (pluginsFile.exists()) {
+    pluginsFile.withReader('UTF-8') { reader -> plugins.load(reader) }
+}
+
+def flutterSdkPath = System.getenv("FLUTTER_ROOT")
+if (flutterSdkPath == null) {
+    throw new GradleException("Flutter SDK not found. Define FLUTTER_ROOT in your environment")
+}
+
+apply from: "$flutterSdkPath/packages/flutter_tools/gradle/app_plugin_loader.gradle"
+
+include ':app'
