@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'screens/landing_page.dart';  // Import LandingPage
+import 'screens/landing_page.dart'; // Or your starting page
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Project1',
-      debugShowCheckedModeBanner: false,
+    return MaterialApp( // <--- Ensure you have MaterialApp here as the root
+      title: 'Your App Title',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const LandingPage(),  // Set LandingPage as the initial screen
+      home: const LandingPage(), // Or your initial page
     );
   }
 }

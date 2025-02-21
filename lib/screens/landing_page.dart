@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';  // Import the HomePage
+import 'login_page.dart'; // Import the LoginPage from the same directory
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+  const LandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,8 @@ class LandingPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.cleaning_services_outlined, size: 50, color: Colors.white),
+                  Icon(Icons.cleaning_services_outlined,
+                      size: 50, color: Colors.white),
                   Container(
                     height: 50,
                     width: 2,
@@ -45,15 +46,15 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 60),
-              // Button to navigate to HomePage
+              // Button to navigate to LoginPage
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigate to HomePage
+                    // Navigate to LoginPage
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => const LoginPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -62,7 +63,8 @@ class LandingPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 36),
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 36),
                   ),
                   child: const Text(
                     "GET STARTED",
